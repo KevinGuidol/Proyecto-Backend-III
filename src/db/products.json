@@ -1,0 +1,222 @@
+[
+  {
+    "nombre": "Laptop Dell Inspiron 15",
+    "descripcion": "Laptop de 15 pulgadas con procesador Intel i5 y 8GB RAM.",
+    "precio": 850,
+    "categoria": "Tecnología",
+    "stock": 10,
+    "codigo": "DL-INSP15-001",
+    "thumbnails": [
+      "dell_inspiron_15.jpg"
+    ]
+  },
+  {
+    "nombre": "Mouse Logitech M185",
+    "descripcion": "Mouse inalámbrico compacto y ergonómico.",
+    "precio": 20,
+    "categoria": "Accesorios",
+    "stock": 50,
+    "codigo": "LG-M185-002",
+    "thumbnails": [
+      "logitech_m185.jpg"
+    ]
+  },
+  {
+    "nombre": "Teclado Mecánico Redragon",
+    "descripcion": "Teclado mecánico retroiluminado para gamers.",
+    "precio": 60,
+    "categoria": "Accesorios",
+    "stock": 30,
+    "codigo": "RD-KB-003",
+    "thumbnails": [
+      "redragon_teclado.jpg"
+    ]
+  },
+  {
+    "nombre": "Monitor Samsung 24\"",
+    "descripcion": "Monitor LED Full HD de 24 pulgadas.",
+    "precio": 180,
+    "categoria": "Tecnología",
+    "stock": 15,
+    "codigo": "SM-24FHD-004",
+    "thumbnails": [
+      "samsung_24.jpg"
+    ]
+  },
+  {
+    "nombre": "Auriculares Sony WH-CH510",
+    "descripcion": "Auriculares inalámbricos con batería de larga duración.",
+    "precio": 55,
+    "categoria": "Audio",
+    "stock": 25,
+    "codigo": "SN-WHCH510-005",
+    "thumbnails": [
+      "sony_whch510.jpg"
+    ]
+  },
+  {
+    "nombre": "Smartphone Xiaomi Redmi Note 12",
+    "descripcion": "Smartphone con pantalla AMOLED y cámara de 50MP.",
+    "precio": 250,
+    "categoria": "Telefonía",
+    "stock": 20,
+    "codigo": "XM-RN12-006",
+    "thumbnails": [
+      "xiaomi_redmi_note_12.jpg"
+    ]
+  },
+  {
+    "nombre": "Tablet Samsung Galaxy Tab A8",
+    "descripcion": "Tablet de 10.5 pulgadas con 64GB de almacenamiento.",
+    "precio": 220,
+    "categoria": "Tecnología",
+    "stock": 12,
+    "codigo": "SM-TABA8-007",
+    "thumbnails": [
+      "samsung_tab_a8.jpg"
+    ]
+  },
+  {
+    "nombre": "Impresora HP DeskJet 2720",
+    "descripcion": "Impresora multifunción inalámbrica.",
+    "precio": 75,
+    "categoria": "Oficina",
+    "stock": 18,
+    "codigo": "HP-DJ2720-008",
+    "thumbnails": [
+      "hp_deskjet_2720.jpg"
+    ]
+  },
+  {
+    "nombre": "Silla Gamer Cougar Armor One",
+    "descripcion": "Silla ergonómica para gamers con soporte lumbar.",
+    "precio": 200,
+    "categoria": "Muebles",
+    "stock": 8,
+    "codigo": "CG-ARMOR1-009",
+    "thumbnails": [
+      "cougar_armor_one.jpg"
+    ]
+  },
+  {
+    "nombre": "Disco SSD Kingston 480GB",
+    "descripcion": "Disco sólido de alta velocidad para PC y laptops.",
+    "precio": 60,
+    "categoria": "Almacenamiento",
+    "stock": 40,
+    "codigo": "KS-SSD480-010",
+    "thumbnails": [
+      "kingston_ssd_480.jpg"
+    ]
+  },
+  {
+    "nombre": "Cámara Canon EOS Rebel T7",
+    "descripcion": "Cámara réflex digital con lente 18-55mm.",
+    "precio": 450,
+    "categoria": "Fotografía",
+    "stock": 6,
+    "codigo": "CN-EOSRT7-011",
+    "thumbnails": [
+      "canon_eos_rebel_t7.jpg"
+    ]
+  },
+  {
+    "nombre": "Smartwatch Amazfit Bip U Pro",
+    "descripcion": "Reloj inteligente con GPS y monitor de salud.",
+    "precio": 70,
+    "categoria": "Wearables",
+    "stock": 22,
+    "codigo": "AM-BIPUPRO-012",
+    "thumbnails": [
+      "amazfit_bip_u_pro.jpg"
+    ]
+  },
+  {
+    "nombre": "Router TP-Link Archer C6",
+    "descripcion": "Router Wi-Fi de doble banda con 4 antenas.",
+    "precio": 45,
+    "categoria": "Redes",
+    "stock": 35,
+    "codigo": "TPL-ARCHC6-013",
+    "thumbnails": [
+      "tplink_archer_c6.jpg"
+    ]
+  },
+  {
+    "nombre": "Memoria RAM Corsair Vengeance 16GB",
+    "descripcion": "Memoria DDR4 de alto rendimiento.",
+    "precio": 65,
+    "categoria": "Componentes",
+    "stock": 28,
+    "codigo": "CR-VEN16-014",
+    "thumbnails": [
+      "corsair_vengeance_16gb.jpg"
+    ]
+  },
+  {
+    "nombre": "Parlante JBL GO 3",
+    "descripcion": "Parlante portátil resistente al agua.",
+    "precio": 35,
+    "categoria": "Audio",
+    "stock": 32,
+    "codigo": "JBL-GO3-015",
+    "thumbnails": [
+      "jbl_go_3.jpg"
+    ]
+  },
+  {
+    "nombre": "Cargador Anker PowerPort 2",
+    "descripcion": "Cargador USB de pared con 2 puertos.",
+    "precio": 18,
+    "categoria": "Accesorios",
+    "stock": 60,
+    "codigo": "ANK-PP2-016",
+    "thumbnails": [
+      "anker_powerport_2.jpg"
+    ]
+  },
+  {
+    "nombre": "Disco Duro Externo Seagate 2TB",
+    "descripcion": "Almacenamiento portátil USB 3.0.",
+    "precio": 80,
+    "categoria": "Almacenamiento",
+    "stock": 14,
+    "codigo": "SG-EXT2TB-017",
+    "thumbnails": [
+      "seagate_2tb.jpg"
+    ]
+  },
+  {
+    "nombre": "Webcam Logitech C920",
+    "descripcion": "Cámara web Full HD para videollamadas.",
+    "precio": 90,
+    "categoria": "Accesorios",
+    "stock": 16,
+    "codigo": "LG-C920-018",
+    "thumbnails": [
+      "logitech_c920.jpg"
+    ]
+  },
+  {
+    "nombre": "Fuente EVGA 600W",
+    "descripcion": "Fuente de poder certificada 80 Plus.",
+    "precio": 55,
+    "categoria": "Componentes",
+    "stock": 19,
+    "codigo": "EVGA-600W-019",
+    "thumbnails": [
+      "evga_600w.jpg"
+    ]
+  },
+  {
+    "nombre": "MicroSD SanDisk 128GB",
+    "descripcion": "Tarjeta de memoria para smartphones y cámaras.",
+    "precio": 22,
+    "categoria": "Almacenamiento",
+    "stock": 45,
+    "codigo": "SD-MIC128-020",
+    "thumbnails": [
+      "sandisk_128gb.jpg"
+    ]
+  }
+]

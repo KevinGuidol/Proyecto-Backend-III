@@ -1,0 +1,44 @@
+{{#if products.length}}
+<div class="responsive-table">
+  <table class="striped highlight">
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Subtotal</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each products}}
+      <tr>
+        <td>{{this.product.nombre}}</td>
+        <td>{{this.quantity}}</td>
+        <td>${{this.product.precio}}</td>
+        <td>${{multiply this.quantity this.product.precio}}</td>
+        <td><a href="#!" class="btn red waves-effect delete-product-btn" data-id="{{this.product._id}}">Eliminar</a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+<div class="right-align" style="margin-top: 20px;">
+  <a href="#!" class="btn red darken-2 waves-effect waves-light delete-all-btn">Eliminar Todos</a>
+</div>
+{{#unless (eq currentUser.role "admin")}}
+<a href="#!" class="btn green waves-effect waves-light purchase-btn" data-cartid="{{currentUser.cartId}}">Finalizar
+  Compra</a>
+{{/unless}}
+
+{{#if (eq currentUser.role "admin")}}
+<a href="/admin/carts" class="btn blue waves-effect waves-light">Volver a Todos los Carritos</a>
+{{/if}}
+{{else}}
+<p>El carrito está vacío.</p>
+{{#if (eq currentUser.role "admin")}}
+<a href="/admin/carts" class="btn blue waves-effect waves-light">Volver a Todos los Carritos</a>
+{{/if}}
+{{/if}}

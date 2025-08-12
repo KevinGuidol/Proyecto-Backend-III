@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <h3 class="center-align">Perfil</h3>
+
+    <div class="card-panel">
+      <p><strong>Nombre:</strong> {{user.first_name}}</p>
+      <p><strong>Apellido:</strong> {{user.last_name}}</p>
+      <p><strong>Email:</strong> {{user.email}}</p>
+      <p><strong>Edad:</strong> {{user.age}}</p>
+      {{#unless (eq user.role "admin")}}
+      <p><strong>Carrito ID:</strong> {{user.cartId}}</p>
+      <a href="/cart/{{user.cartId}}" class="btn">Ver mi Carrito</a>
+      <a href="/tickets" class="btn waves-effect waves-light">Ver Mis Pedidos</a>
+      {{/unless}}
+      {{#if (eq user.role "admin")}}
+      <a href="/admin/tickets" class="btn waves-effect waves-light blue">Ver Todos los Pedidos</a>
+      <a href="/admin/carts" class="btn waves-effect waves-light blue">Ver Todos los Carritos</a>
+      {{/if}}
+    </div>
+
+    <div class="center-align">
+      <a href="/api/sessions/logout" class="btn red">Cerrar sesión</a>
+    </div>
+  </div>
+</div>
