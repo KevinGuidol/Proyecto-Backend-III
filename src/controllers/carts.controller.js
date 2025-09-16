@@ -1,14 +1,19 @@
 import { cartService } from "../services/carts.service.js";
 import { productsService } from "../services/products.service.js";
 import { ticketService } from "../services/ticket.service.js";
+import { NotFoundError, ValidationError } from "../utils/customErrors.js"
+import { getLogger } from "../utils/logger.js";
+
+const logger = getLogger();
 
 class CartsController {
   async getAll(req, res) {
     try {
+      logger.info("Obteniendo todos los carritos");
       const carts = await cartService.getAllCarts();
       res.json(carts);
     } catch (error) {
-      res.status(500).json({ error: "Error al obtener los carritos" });
+      next(error);
     }
   }
 
@@ -21,7 +26,7 @@ class CartsController {
       }
       res.json(cart);
     } catch (error) {
-      res.status(500).json({ error: "Error al obtener el carrito" });
+      next(error);
     }
   }
 
@@ -30,7 +35,7 @@ class CartsController {
       const newCart = await cartService.createCart();
       res.status(201).json(newCart);
     } catch (error) {
-      res.status(500).json({ error: "Error al crear el carrito" });
+      next(error);
     }
   }
 
@@ -44,7 +49,7 @@ class CartsController {
       const updatedCart = await cartService.addProductToCart(cartId, productId);
       res.json(updatedCart);
     } catch (error) {
-      res.status(500).json({ error: error.message });
+      next(error);
     }
   }
 
@@ -55,7 +60,7 @@ class CartsController {
       const updatedCart = await cartService.updateCart(cartId, products);
       res.json(updatedCart);
     } catch (error) {
-      res.status(500).json({ error: "Error al actualizar el carrito" });
+      next(error);
     }
   }
 
@@ -69,7 +74,7 @@ class CartsController {
       const updatedCart = await cartService.updateProductQuantity(cartId, productId, quantity);
       res.json(updatedCart);
     } catch (error) {
-      res.status(500).json({ error: "Error al actualizar la cantidad del producto" });
+      next(error);
     }
   }
 
@@ -79,7 +84,7 @@ class CartsController {
       const updatedCart = await cartService.removeProductFromCart(cartId, productId);
       res.json(updatedCart);
     } catch (error) {
-      res.status(500).json({ error: "Error al eliminar el producto del carrito" });
+      next(error);
     }
   }
 
@@ -89,7 +94,7 @@ class CartsController {
       const clearedCart = await cartService.clearCart(cartId);
       res.json({ message: "Todos los productos eliminados del carrito", clearedCart });
     } catch (error) {
-      res.status(500).json({ error: "Error al eliminar productos del carrito" });
+      next(error);
     }
   }
 
@@ -142,8 +147,7 @@ class CartsController {
         });
       }
     } catch (error) {
-      console.error("Error al finalizar la compra:", error);
-      res.status(500).json({ error: "Error al finalizar la compra" });
+      next(error);
     }
   }
 }

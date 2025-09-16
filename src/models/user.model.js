@@ -8,6 +8,7 @@ const userSchema = new Schema({
   password: { type: String, required: true },
   cartId: { type: Schema.Types.ObjectId, ref: "Cart" },
   role: { type: String, default: "user" },
+  isTestUser: { type: Boolean, default: false },
 });
 
 export const userModel = model("user", userSchema);

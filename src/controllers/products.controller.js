@@ -1,5 +1,8 @@
 import { productsService } from "../services/products.service.js";
 import { io } from "../socket.js";
+import { getLogger } from "../utils/logger.js";
+
+const logger = getLogger();
 
 class ProductsController {
   async getAll(req, res) {
@@ -7,7 +10,7 @@ class ProductsController {
       const products = await productsService.getAll();
       res.status(200).json(products);
     } catch (error) {
-      console.error("Error al obtener los productos:", error.message);
+      logger.error("Error al obtener los productos:", error.message);
       res.status(500).json({ error: "Error al obtener los productos" });
     }
   }
@@ -21,7 +24,7 @@ class ProductsController {
       }
       res.status(200).json(product);
     } catch (error) {
-      console.error("Error al obtener el producto:", error.message);
+      logger.error("Error al obtener el producto:", error.message);
       res.status(500).json({ error: "Error al obtener el producto" });
     }
   }
@@ -33,7 +36,7 @@ class ProductsController {
       io.emit("nuevo-producto", createdProduct);
       res.status(201).json(createdProduct);
     } catch (error) {
-      console.error("Error al crear el producto:", error.message);
+      logger.error("Error al crear el producto:", error.message);
       res.status(500).json({ error: "Error al crear el producto" });
     }
   }
@@ -48,7 +51,7 @@ class ProductsController {
       }
       res.status(200).json(product);
     } catch (error) {
-      console.error("Error al actualizar el producto:", error.message);
+      logger.error("Error al actualizar el producto:", error.message);
       res.status(500).json({ error: "Error al actualizar el producto" });
     }
   }
@@ -62,7 +65,7 @@ class ProductsController {
       }
       res.status(200).json({ message: "Producto eliminado con éxito" });
     } catch (error) {
-      console.error("Error al eliminar el producto:", error.message);
+      logger.error("Error al eliminar el producto:", error.message);
       res.status(500).json({ error: "Error al eliminar el producto" });
     }
   }

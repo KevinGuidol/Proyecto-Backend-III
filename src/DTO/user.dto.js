@@ -30,10 +30,20 @@ export const userDto = Joi.object({
     "string.empty": "La contraseña no puede estar vacía",
     "any.required": "La contraseña es obligatoria",
   }),
-  cartId: Joi.string().optional().messages({
-    "string.base": "El cartId debe ser una cadena",
-  }),
+  cartId: Joi.alternatives()
+    .try(
+      Joi.string().messages({
+        "string.base": "El cartId debe ser una cadena",
+      }),
+      Joi.object().messages({
+        "object.base": "El cartId debe ser un objeto o una cadena",
+      })
+    )
+    .optional(),
   role: Joi.string().valid("user", "admin").default("user").messages({
     "any.only": "El rol debe ser 'user' o 'admin'",
+  }),
+  isTestUser: Joi.boolean().optional().default(false).messages({
+    'boolean.base': 'isTestUser debe ser un valor booleano',
   }),
 });

@@ -1,0 +1,127 @@
+paths:
+  /api/sessions/register:
+    post:
+      summary: Registra un nuevo usuario
+      tags: [Sessions]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  example: Juan
+                last_name:
+                  type: string
+                  example: Pérez
+                age:
+                  type: number
+                  example: 30
+                email:
+                  type: string
+                  example: juan@example.com
+                password:
+                  type: string
+                  example: password123
+              required:
+                - first_name
+                - last_name
+                - age
+                - email
+                - password
+      responses:
+        302:
+          description: Redirige a la página de login tras un registro exitoso
+        400:
+          description: Error en los datos proporcionados
+  /api/users:
+    get:
+      summary: Obtiene la lista de todos los usuarios
+      tags: [Users]
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Lista de usuarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        500:
+          description: Error al obtener los usuarios
+  /api/sessions/login:
+    post:
+      summary: Inicia sesión con un usuario existente
+      tags: [Sessions]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: juan@example.com
+                password:
+                  type: string
+                  example: password123
+              required:
+                - email
+                - password
+      responses:
+        302:
+          description: Redirige a la página principal tras un login exitoso
+        400:
+          description: Error en las credenciales proporcionadas
+  /api/sessions/current:
+    get:
+      summary: Obtiene el usuario autenticado actual
+      tags: [Sessions]
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Detalles del usuario autenticado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        401:
+          description: No autorizado - Token inválido o ausente
+  /api/sessions/restore-password:
+    post:
+      summary: Restaura la contraseña de un usuario
+      tags: [Sessions]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: juan@example.com
+                password:
+                  type: string
+                  example: newpassword123
+              required:
+                - email
+                - password
+      responses:
+        302:
+          description: Redirige a la página de login tras restaurar la contraseña
+        400:
+          description: Error - Usuario no encontrado o datos inválidos
+  /api/sessions/logout:
+    get:
+      summary: Cierra la sesión del usuario
+      tags: [Sessions]
+      responses:
+        302:
+          description: Redirige a la página principal tras cerrar sesión

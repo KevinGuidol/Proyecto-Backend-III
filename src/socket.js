@@ -1,5 +1,8 @@
 import { Server } from "socket.io";
 import { productsService } from "./services/products.service.js";
+import { getLogger } from "./utils/logger.js";
+
+const logger = getLogger();
 
 export let io;
 
@@ -7,7 +10,7 @@ export const initSocket = (server) => {
   io = new Server(server);
 
   io.on("connection", (socket) => {
-    console.log("Nuevo cliente conectado:", socket.id);
+    logger.info("Nuevo cliente conectado:", socket.id);
 
 
     socket.emit("init", productsService.getAll().docs);
@@ -23,7 +26,7 @@ export const initSocket = (server) => {
         });
         io.emit("actualizarProductos", productosUltimaPagina, totalPages);
       } catch (error) {
-        console.error("Error al agregar producto:", error.message);
+        getLogger.error("Error al agregar producto:", error.message);
         socket.emit("error", error.message);
       }
     });
@@ -41,7 +44,7 @@ export const initSocket = (server) => {
           productosActualizados.totalPages
         );
       } catch (error) {
-        console.error("Error al eliminar producto:", error.message);
+        logger.error("Error al eliminar producto:", error.message);
         socket.emit("error", error.message);
       }
     });

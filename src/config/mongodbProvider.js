@@ -1,4 +1,7 @@
 import mongoose from "mongoose";
+import { getLogger } from '../utils/logger.js';
+
+const logger = getLogger();
 
 class MongoDBProvider {
   connection = null;
@@ -15,9 +18,9 @@ class MongoDBProvider {
     if (!this.connection) {
       try {
         this.connection = await mongoose.connect(uri, {});
-        console.log("Connected to MongoDB");
+        logger.info("Connected to MongoDB");
       } catch (error) {
-        console.error("Error connecting to MongoDB", error);
+        logger.error("Error connecting to MongoDB", error);
         throw error;
       }
     }

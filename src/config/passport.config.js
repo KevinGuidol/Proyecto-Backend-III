@@ -8,6 +8,9 @@ import { hashPassword, verifyPassword } from "../utils/password.utils.js";
 import { cartService } from "../services/carts.service.js";
 import { mailService } from "../services/mail.service.js";
 import { EMAIL_TYPES } from "../common/constants/emailTypes.js";
+import { getLogger } from "../utils/logger.js";
+
+const logger = getLogger();
 
 export function initializePassport() {
   passport.use("register", new LocalStrategy(
@@ -16,7 +19,7 @@ export function initializePassport() {
       passReqToCallback: true,
     },
     async (req, email, password, done) => {
-      const { first_name, last_name, age } = req.body;
+      const { first_name, last_name, age, isTestUser } = req.body;
 
       if (!first_name || !last_name || !age)
         return done(null, false, { message: "Todos los campos son requeridos" });
@@ -37,6 +40,7 @@ export function initializePassport() {
           email,
           password: hashedPassword,
           cartId: newCart._id,
+          isTestUser: isTestUser || false,
         };
 
         const user = await userService.create(userData);
@@ -48,7 +52,7 @@ export function initializePassport() {
             type: EMAIL_TYPES.WELCOME,
           });
         } catch (mailError) {
-          console.error("Failed to send welcome email:", mailError);
+          logger.error("Failed to send welcome email:", mailError);
         }
 
         return done(null, user);
@@ -129,6 +133,7 @@ export function initializePassport() {
         try {
           const user = await userService.getById(jwtPayload._id);
           if (!user) return done(null, false);
+          user.cartId = user.cartId ? user.cartId.toString() : null;
           return done(null, user);
         } catch (error) {
           return done(error);
