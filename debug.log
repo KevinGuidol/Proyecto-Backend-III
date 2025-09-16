@@ -146,3 +146,23 @@
 [2025-09-16T19:35:30.962] [HTTP] default - GET /favicon.ico
 [2025-09-16T19:35:32.512] [HTTP] default - GET /
 [2025-09-16T19:35:32.840] [INFO] default - Nuevo cliente conectado: jbZ55huLYbkjQjvcAAAD
+[2025-09-16T20:12:11.256] [INFO] default - Connected to MongoDB
+[2025-09-16T20:12:11.483] [HTTP] default - POST /api/sessions/register
+[2025-09-16T20:12:12.104] [HTTP] default - POST /api/sessions/register
+[2025-09-16T20:12:12.405] [HTTP] default - POST /api/sessions/register
+[2025-09-16T20:12:12.642] [HTTP] default - POST /api/sessions/register
+[2025-09-16T20:12:12.945] [HTTP] default - POST /api/sessions/login
+[2025-09-16T20:12:13.272] [HTTP] default - POST /api/sessions/register
+[2025-09-16T20:12:13.604] [HTTP] default - POST /api/sessions/login
+[2025-09-16T20:12:13.837] [DEBUG] default - Buscando carrito con ID: 68c9eecd397ebdb79c8ffca4
+[2025-09-16T20:12:13.910] [HTTP] default - GET /api/sessions/current
+[2025-09-16T20:12:14.143] [HTTP] default - POST /api/sessions/register
+[2025-09-16T20:12:14.439] [HTTP] default - POST /api/sessions/restore-password
+[2025-09-16T20:12:14.678] [HTTP] default - POST /api/sessions/login
+[2025-09-16T20:12:15.005] [HTTP] default - POST /api/sessions/register
+[2025-09-16T20:12:15.298] [HTTP] default - POST /api/sessions/login
+[2025-09-16T20:12:15.524] [DEBUG] default - Buscando carrito con ID: 68c9eecf397ebdb79c8ffcb7
+[2025-09-16T20:12:15.588] [HTTP] default - GET /api/sessions/logout
+[2025-09-16T20:12:15.669] [HTTP] default - POST /api/sessions/register
+[2025-09-16T20:12:15.838] [HTTP] default - POST /api/sessions/register
+[2025-09-16T20:12:16.146] [HTTP] default - POST /api/sessions/login

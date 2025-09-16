@@ -142,7 +142,7 @@ const startServer = async () => {
 
 
 
-  server.listen(CONFIG.PORT, () => {
+  server.listen(CONFIG.PORT, '0.0.0.0', () => {
     logger.info(`Server running on port http://localhost:${CONFIG.PORT}`);
   });
 };
